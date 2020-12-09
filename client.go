@@ -26,7 +26,7 @@ Example usage: ./client -ip=172.17.0.1 -conn=10
 	}
 	flag.Parse()
 
-	u := url.URL{Scheme: "ws", Host: fmt.Sprintf("%s:%s", ip, port), Path: "/"}
+	u := url.URL{Scheme: "ws", Host: fmt.Sprintf("%s:%s", *ip, *port), Path: "/"}
 	log.Printf("Connecting to %s", u.String())
 	var conns []*websocket.Conn
 	for i := 0; i < *connections; i++ {
